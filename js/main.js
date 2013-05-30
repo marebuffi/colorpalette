@@ -167,14 +167,10 @@ function buildImg(url){
 		var usedColors = []; // used to see if close color is already seen
 		var isValid = false;
 
-		// create palette of the 5 most used colors
+		// 5 most used colors
 		for( var clr in sortedColors ){
-			//info.innerHTML += clr + ": " + sortedColors[clr] + "<br />";
-			//ptx.fillStyle = "rgba(" + clr + ")";  
-			//ptx.fillRect (ctr * 25, 0, 25, 25);
-			//ptx.strokeRect (ctr * 25, 0, 25, 25);
-		   
-			//weed out colors close to those already seen
+		
+			//eliminate redundant colors
 			var colorValues = clr.split(',');
 			var hexVal = '';
 			
