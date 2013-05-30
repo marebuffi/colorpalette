@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]>    <html class="no-js iem7"> <![endif]-->
+<!--[if (gt IEMobile 7)|!(IEMobile)]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	<title>Color Palette v0.1a.r02</title>
+	<meta name="description" content="">
+	<meta name="HandheldFriendly" content="True">
+	<meta name="MobileOptimized" content="320">
+	<meta http-equiv="cleartype" content="on">
+	<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1">
+	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="img/touch/apple-touch-icon-144x144-precomposed.png">
+	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="img/touch/apple-touch-icon-114x114-precomposed.png">
+	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="img/touch/apple-touch-icon-72x72-precomposed.png">
+	<link rel="apple-touch-icon-precomposed" href="img/touch/apple-touch-icon-57x57-precomposed.png">
+	<link rel="shortcut icon" href="img/touch/apple-touch-icon.png">
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//api.flickr.com/services/rest">
+
+	<!-- Tile icon for Win8 (144x144 + tile color) -->
+	<meta name="msapplication-TileImage" content="img/touch/apple-touch-icon-144x144-precomposed.png">
+	<meta name="msapplication-TileColor" content="#222222">
+
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="apple-mobile-web-app-title" content="">
+
+	<!-- This script prevents links from opening in Mobile Safari. https://gist.github.com/1042026 -->
+				<!--
+				<script>(function(a,b,c){if(c in b&&b[c]){var d,e=a.location,f=/^(a|html)$/i;a.addEventListener("click",function(a){d=a.target;while(!f.test(d.nodeName))d=d.parentNode;"href"in d&&(d.href.indexOf("http")||~d.href.indexOf(e.host))&&(a.preventDefault(),e.href=d.href)},!1)}})(document,window.navigator,"standalone")</script>
+			-->
+
+			<link rel="stylesheet" href="css/normalize.css">
+			<link rel="stylesheet" href="css/font-awesome.min.css">
+			<link rel="stylesheet" href="css/main.css">
+			<link rel="stylesheet" href="css/site.css">
+			<link href='http://fonts.googleapis.com/css?family=Oxygen:400,300' rel='stylesheet' type='text/css'>
+			<link href='http://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
+
+			<!--script>
+				function BlockMove(event) {
+				// Tell Safari not to move the window.
+				event.preventDefault() ;
+				}
+			</script-->
+			
+		</head>
+
+		<body>
+			<!--body ontouchmove="BlockMove(event);"-->
+			<div id="fb-root"></div>
+			
+			<script>
+			(function(d, s, id) {
+				var js, fjs = d.getElementsByTagName(s)[0];
+			  	if (d.getElementById(id)) return;
+			  	js = d.createElement(s); js.id = id;
+				js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+				fjs.parentNode.insertBefore(js, fjs);
+			}(document, 'script', 'facebook-jssdk'));
+			</script>
+					
+			<div class="container">  
+				<div id="page1">
+					<div data-theme="a" data-role="header" id="header">
+						<h3 class="headerText">Color Palette</h3>
+						<span id="loader"></span>
+					</div>
+					<div class="content">
+
+						<div id="floaty">
+							<div class="fb-like" data-href="http://www.colorpalette.com.ar" data-send="true" data-layout="box_count" data-width="450" data-show-faces="false" data-font="lucida grande" data-colorscheme="dark"></div>
+						</div>
+
+						<p>Push the button &amp; get a new random palette.</p>
+						<a id="generateRandom" class="generate" href="index.html">Generate Random</a>
+						<p>or make your own!</p>
+						<p class="responseError error">Bad URL?</p>
+						<a class="useUrl generate" href="#">Extract from URL</a>
+
+						<div class="imgUrlWrap">
+							<input type="text" id="imgUrl"  placeholder="http://"/>
+							<p class="urlError error">Bad URL?</p>
+						</div>
+
+						<canvas id="canvas" height="400" width="400"></canvas>
+						<div class="imgWrap"></div>
+						<ul id="swatches" class="bevel"></ul>
+
+						<p id="tt-color-combinations">Color combinations</p>
+						<div id="demo">
+							<pre id="code-output"></pre>
+							<span id="yourColor">Selected Color</span>
+							
+							<ul id="filter-output" class="colorCombinations bevel">
+								<li class="lighten swatch"><span class="visible">Lighten</span></li>
+								<li class="darken swatch"><span class="visible">Darken</span></li>
+								<li class="saturate swatch"><span class="visible">Saturate</span></li>
+								<li class="desaturate swatch"><span class="visible">Desaturate</span></li>
+								<li class="greyscale swatch"><span class="visible">Greyscale</span></li>
+								<li class="mostReadable swatch"><span class="visible">Most Readable</span></li>
+							</ul>
+
+							<ul id="combine-output" class="bevel">
+								<li><p>Triad</p><ul class="triad"></ul></li>
+								<li><p>Tetrad</p><ul class="tetrad"></ul></li>
+								<li><p>Monochromatic</p><ul class="mono"></ul></li>
+								<li><p>Analogous</p><ul class="analogous"></ul></li>
+								<li><p>Split Complements</p><ul class="sc"></ul></li>
+							</ul>
+
+						</div>
+						
+					</div><!--content-->
+
+					<footer>
+						<h6>Info</h6>
+						<p>Author: Mario Rebuffi - <a href="http://www.rebuffi.com.ar">http://rebuffi.com.ar</p>
+						<p>Color Palette v0.1a.r01</p>
+						<ul>
+							<li><a href="#" class="icon-html">HTML5</a></li>
+							<li><a href="http://www.flikr.com" class="icon-flikr">Flikr</a></li>
+						</ul>
+					</footer>
+
+				</div><!--.container-->
+				<!--script src="js/vendor/zepto.min.js"></script-->
+				<!--script src="js/vendor/jquery-1.9.0.min.js"></script-->
+				<script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+				<script src="js/tinycolor.js"></script>
+				<script src="js/helper.js"></script>
+				<script src="js/vendor/modernizr-2.6.2.min.js"></script>
+				<!--script src="js/main.js"></script-->
+				<script src="js/main.min.js"></script>
+
+			</body>
+			</html>
