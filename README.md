@@ -9,7 +9,7 @@ You can use your own image's URL's or you can get a random popular image automat
 
 - [Website](http://www.colorpalette.com.ar)
 
-This was built over a modernizr template and uses jQuery as framework, I'll update the info and tidy things up when I get some time for it.
+This was built over a modernizr template and uses jQuery & TinyColor.js as frameworks, I'll update the info and tidy things up when I get some time for it.
 
 ## License
 
