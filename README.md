@@ -7,7 +7,7 @@ Just a little experiment using HTML5's CANVAS to analyze the colors each certain
 
 You can use your own image's URL's or you can get a random popular image automaticall y from flikr in a click.
 
-- [Website](http://www.colorpalette.com.ar)
+- [Website](http://colorpalette.com.ar)
 
 This was built over a modernizr template and uses jQuery & TinyColor.js as frameworks, I'll update the info and tidy things up when I get some time for it.
 
